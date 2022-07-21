@@ -6,6 +6,8 @@ jobs:
   eslint_check_upload:
     runs-on: ubuntu-latest
     name: ESLint Check and Report Upload
+    permissions:
+      pull-requests: write
 
     steps:
       - name: Checkout repo
