@@ -1,6 +1,9 @@
 name: Eslint Check
 
-on: [pull_request]
+on:
+  pull_request_target:
+    branches:
+      - master
 
 jobs:
   eslint_check_upload:
