@@ -1,14 +1,26 @@
 name: Eslint Check
 
-on: [pull_request]
+on:
+  pull_request_target:
+    branches:
+      - master
 
 jobs:
   eslint_check_upload:
     runs-on: ubuntu-latest
     name: ESLint Check and Report Upload
+    permissions:
+      contents: write
+      checks: write
+      pull-requests: write
+      actions: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 2
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
