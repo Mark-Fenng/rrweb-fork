@@ -8,7 +8,7 @@ jobs:
     name: ESLint Check and Report Upload
     permissions:
       checks: write
-      pull-requests: read
+      pull-requests: write
       contents: write
 
     steps:
