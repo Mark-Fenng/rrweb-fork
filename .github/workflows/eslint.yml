@@ -8,9 +8,7 @@ jobs:
     name: ESLint Check and Report Upload
     permissions:
       checks: write
-      checks-reason: to create checks
       pull-requests: read
-      pull-requests-reason: to get changed PR files
 
     steps:
       - name: Checkout repo
